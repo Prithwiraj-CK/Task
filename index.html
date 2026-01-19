@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Smart Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 TaskFlow</h1>
+            <p>Your Smart Task Management Dashboard</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <div class="stat-number" id="totalTasks">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <div class="stat-number" id="completedTasks">0</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>Task Manager</h2>
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Enter a new task...">
+                    <select id="prioritySelect">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+                    <button class="filter-btn" onclick="filterTasks('active')">Active</button>
+                    <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+                    <button class="filter-btn" onclick="filterTasks('high')">High Priority</button>
+                </div>
+
+                <div class="task-list" id="taskList"></div>
+            </div>
+
+            <div class="card">
+                <h2>Statistics</h2>
+                <div class="chart-container">
+                    <div class="chart-bar">
+                        <div class="chart-label">High</div>
+                        <div class="chart-bar-fill" id="highBar" style="width: 0%">0</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-label">Medium</div>
+                        <div class="chart-bar-fill" id="mediumBar" style="width: 0%">0</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-label">Low</div>
+                        <div class="chart-bar-fill" id="lowBar" style="width: 0%">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
